@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | OSCA Records System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body data-page="login">
+  <div class="auth">
+    <div class="auth-photo"><img src="assets/img/mayondon.png" alt="Barangay Mayondon Hall"></div>
+    <div class="auth-panel">
+
+      <!-- Login view -->
+      <form class="auth-box" id="loginForm" novalidate>
+        <h1>Welcome Admin!</h1>
+        <div class="field" id="f-login-user">
+          <label for="loginUser">Username</label>
+          <input class="input" id="loginUser" name="username" type="text" placeholder="Enter your Username" autocomplete="username" aria-describedby="err-login-user">
+          <span class="error-msg" id="err-login-user">Please enter your username.</span>
+        </div>
+        <div class="field" id="f-login-pass">
+          <label for="loginPass">Password</label>
+          <div class="input-wrap">
+            <input class="input" id="loginPass" name="password" type="password" placeholder="Enter your Password" autocomplete="current-password" aria-describedby="err-login-pass">
+            <button type="button" data-toggle-pass="loginPass" aria-label="Show or hide password"><i class="bi bi-eye"></i></button>
+          </div>
+          <span class="error-msg" id="err-login-pass">Please enter your password.</span>
+        </div>
+        <div class="auth-row">
+          <label class="check"><input type="checkbox" id="rememberMe"> Remember me</label>
+          <button type="button" class="link" id="forgotBtn">Forgot Password</button>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p class="auth-foot">Don't have an account? <button type="button" class="link" id="showSignup">Sign Up</button></p>
+      </form>
+
+      <!-- Sign-up view -->
+      <form class="auth-box" id="signupForm" novalidate hidden>
+        <h1>Sign Up</h1>
+        <div class="field" id="f-su-user">
+          <label for="suUser">Username</label>
+          <input class="input" id="suUser" name="username" type="text" placeholder="Enter your Username" autocomplete="username" aria-describedby="err-su-user">
+          <span class="error-msg" id="err-su-user">Username must be at least 4 characters.</span>
+        </div>
+        <div class="field" id="f-su-pass">
+          <label for="suPass">Password</label>
+          <div class="input-wrap">
+            <input class="input" id="suPass" name="password" type="password" placeholder="Enter your Password" autocomplete="new-password" aria-describedby="err-su-pass">
+            <button type="button" data-toggle-pass="suPass" aria-label="Show or hide password"><i class="bi bi-eye"></i></button>
+          </div>
+          <span class="error-msg" id="err-su-pass">Password must be at least 6 characters.</span>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+        <p class="auth-foot">Have an account? <button type="button" class="link" data-switch="login" id="showLogin">Log In</button></p>
+      </form>
+
+    </div>
+  </div>
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local config & secrets
+includes/config.local.php
+.env
+
+# Logs / uploads
+*.log
+uploads/
